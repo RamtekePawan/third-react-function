@@ -1,25 +1,32 @@
-import logo from './logo.svg';
-import './App.css';
+import { useState } from "react";
 
 function App() {
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <h1>Counter APP</h1>
+      <LikeCounter />
+    </>
   );
 }
 
 export default App;
+
+function LikeCounter() {
+
+  //let count = 1; //State Less member
+  let [count, setCount] = useState(0);
+
+  let likeButton = () => {
+    count = count + 1;
+    setCount(count);
+    console.log(count);
+  }
+
+  return (
+
+    <><h1>{count}</h1>
+      <button type="Like" onClick={likeButton} >LikeME!!!!</button>
+    </>
+  )
+}
